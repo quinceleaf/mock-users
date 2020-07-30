@@ -4,11 +4,12 @@ const generateUsers = require("./generateUsers");
 
 const app = express();
 
+const defaultBatchSize = 100;
 const errorMessage =
   "CALL /api/users (returns 100 randomly-generated records) OR /api/users/[NUMBER] (returns specified NUMBER of randomly-generated records)";
 
 app.get("/api/users/", async function (req, res) {
-  const users = await generateUsers(100);
+  const users = await generateUsers(defaultBatchSize);
   res.json({
     users,
   });
