@@ -10,11 +10,11 @@ const statusChoices = [
 module.exports = function generateUsers(batchSize) {
   let counter = 0;
   let userBatch = [];
-  let baseDate = faker.date.recent();
-  let dateFields = logicallySequencedDateFields(baseDate);
   do {
     let userName = `${faker.name.firstName()} ${faker.name.lastName()}`;
     let userNameCompact = userName.replace(" ", "");
+    let baseDate = faker.date.recent();
+    let dateFields = logicallySequencedDateFields(baseDate);
     userBatch.push({
       full_name: userName,
       bio: faker.lorem.sentence(),
