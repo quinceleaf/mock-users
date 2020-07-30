@@ -26,14 +26,10 @@ app.get("/api/users/:batchSize", async function (req, res) {
   }
 });
 
-// app.get("/", async function (req, res) {
-//   res.send(errorMessage);
-// });
-
 app.get("*", async function (req, res) {
   res.send(errorMessage);
 });
 
-app.listen(3000, () => {
-  console.log("Listening on port 3000");
+app.listen(3723, () => {
+  console.log("Listening on port 3723");
 });
